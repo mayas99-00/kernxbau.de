@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>KERNX BAU — Die neue Bauklarheit.</title>
+<meta content="KERNX BAU UG (haftungsbeschränkt): Nachunternehmer aus Hannover für Erdkabel-, Leerrohr- und Breitbandausbau, Erd- und Grabungsarbeiten, strukturierte Ausführung und gemeinsamen Projektstand." name="description"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://kernxbau.de/" rel="canonical"/>
+<meta content="KERNX BAU — Die neue Bauklarheit." property="og:title"/>
+<meta content="Was ausgeführt ist, ist sichtbar. Was offen ist, ebenfalls." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://kernxbau.de/" property="og:url"/>
+<meta content="#f7f7f2" name="theme-color"/>
+<style>
+    :root{
+      --green:#0D2818;
+      --green-2:#153e27;
+      --green-3:#e8efe9;
+      --gold:#C8960C;
+      --gold-2:#e0b33d;
+      --paper:#f7f7f2;
+      --white:#ffffff;
+      --ink:#142019;
+      --muted:#657068;
+      --line:#dce2da;
+      --soft:#eef1ec;
+      --shadow:0 24px 70px rgba(13,40,24,.13);
+      --header:82px;
+      --container:1240px;
+      --ease:cubic-bezier(.2,.7,.25,1);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--paper);color:var(--ink);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased
+    }
+    body.menu-open{overflow:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    .container{width:min(var(--container),calc(100% - 42px));margin-inline:auto}
+    .skip{position:absolute;left:18px;top:-70px;background:var(--gold);color:#10150f;padding:12px 16px;z-index:999;border-radius:4px}
+    .skip:focus{top:18px}
+    :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+
+    /* Opening logo / Seitenintro */
+    body.intro-active{overflow:hidden}
+    .site-intro{
+      position:fixed;inset:0;z-index:10000;display:grid;place-items:center;
+      background:
+        radial-gradient(circle at 50% 46%,rgba(200,150,12,.14),transparent 28%),
+        linear-gradient(145deg,#07150d,#0D2818 60%,#07150d);
+      opacity:1;visibility:visible;transition:opacity .72s var(--ease),visibility .72s var(--ease)
+    }
+    .site-intro.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+    .intro-logo-wrap{display:flex;flex-direction:column;align-items:center;gap:22px;transform:translateY(14px) scale(.88);opacity:0;animation:introLogo 1.05s .12s var(--ease) forwards}
+    .intro-logo-wrap img{width:min(300px,68vw);height:auto;filter:drop-shadow(0 22px 45px rgba(0,0,0,.42))}
+    .intro-line{width:min(340px,68vw);height:1px;background:linear-gradient(90deg,transparent,var(--gold-2),transparent);transform:scaleX(0);animation:introLine .85s .65s var(--ease) forwards}
+    .intro-claim{color:rgba(255,255,255,.78);font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:0;animation:introText .6s .82s forwards}
+    .intro-skip{position:absolute;right:22px;bottom:20px;border:0;background:transparent;color:rgba(255,255,255,.52);font-size:.72rem;letter-spacing:.08em;padding:10px}
+    @keyframes introLogo{to{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes introLine{to{transform:scaleX(1)}}
+    @keyframes introText{to{opacity:1}}
+
+    /* Header */
+    .site-header{
+      position:fixed;inset:0 0 auto;z-index:100;height:var(--header);
+      background:rgba(247,247,242,.86);backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(13,40,24,.09);transition:.25s var(--ease)
+    }
+    .site-header.scrolled{height:72px;background:rgba(255,255,255,.94);box-shadow:0 8px 30px rgba(13,40,24,.06)}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;min-width:180px}
+    .brand img{width:118px;height:66px;object-fit:contain;object-position:left center}
+    .nav-links{display:flex;align-items:center;gap:30px}
+    .nav-links a{font-size:.79rem;font-weight:720;color:#334038;letter-spacing:.03em;position:relative;padding:10px 0}
+    .nav-links a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:5px;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.25s var(--ease)}
+    .nav-links a:hover::after{transform:scaleX(1)}
+    .nav-cta,.btn-primary{display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:#fff!important;border:1px solid var(--green);padding:13px 20px!important;border-radius:5px;font-weight:760;transition:.22s var(--ease)}
+    .nav-cta:hover,.btn-primary:hover{background:var(--green-2);transform:translateY(-2px)}
+    .menu-btn{display:none;width:46px;height:46px;border:1px solid var(--line);background:#fff;color:var(--green);border-radius:6px;align-items:center;justify-content:center}
+    .menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:20px;height:2px;background:currentColor;position:relative;transition:.22s}
+    .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+    .menu-btn[aria-expanded="true"] span{background:transparent}.menu-btn[aria-expanded="true"] span::before{transform:rotate(45deg) translate(4px,5px)}.menu-btn[aria-expanded="true"] span::after{transform:rotate(-45deg) translate(4px,-5px)}
+    .mobile-menu{position:fixed;inset:var(--header) 0 0;background:rgba(247,247,242,.99);z-index:95;padding:42px 24px;display:flex;flex-direction:column;gap:22px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:.22s var(--ease)}
+    .mobile-menu.open{opacity:1;visibility:visible;transform:none}.mobile-menu a{font-size:1.6rem;font-weight:800;color:var(--green)}.mobile-menu .nav-cta{font-size:1rem;width:max-content}
+
+    /* Common */
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.75rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+    .eyebrow::before{content:"";width:9px;height:9px;background:var(--gold)}
+    .section{padding:112px 0;border-top:1px solid var(--line)}
+    .section.white{background:#fff}.section.green{background:var(--green);color:#fff}.section.soft{background:var(--soft)}
+    .section-head{max-width:760px;margin-bottom:54px}.section-title{font-size:clamp(2.35rem,4.7vw,5.2rem);line-height:.98;letter-spacing:-.05em;color:var(--green);margin-top:18px;font-weight:850}.section.green .section-title{color:#fff}
+    .section-lede{font-size:1.08rem;color:var(--muted);max-width:700px;margin-top:20px}.section.green .section-lede{color:rgba(255,255,255,.7)}
+    .btn{min-height:50px;padding:14px 21px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;font-weight:760;transition:.22s var(--ease)}
+    .btn-secondary{background:#fff;border-color:rgba(13,40,24,.22);color:var(--green)}.btn-secondary:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+    /* Hero */
+    .hero{min-height:100svh;padding:calc(var(--header) + 76px) 0 85px;background:radial-gradient(circle at 7% 15%,rgba(200,150,12,.11),transparent 25%),linear-gradient(180deg,#fff 0%,var(--paper) 100%);display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:68px;align-items:center}
+    .hero-logo{width:185px;margin-bottom:25px;filter:drop-shadow(0 10px 20px rgba(13,40,24,.09))}
+    .hero h1{font-size:clamp(3.2rem,7vw,7.5rem);line-height:.9;letter-spacing:-.065em;color:var(--green);max-width:790px}
+    .hero h1 span{display:block;color:var(--gold)}
+    .hero-promise{font-size:clamp(1.22rem,2vw,1.72rem);font-weight:680;line-height:1.38;color:var(--green);margin-top:30px}
+    .hero-promise span{display:block}
+    .hero-copy{max-width:650px;color:var(--muted);font-size:1.06rem;margin-top:20px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:34px}
+    .hero-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:42px;max-width:760px}
+    .hero-trust div{background:rgba(255,255,255,.8);padding:16px 18px}.hero-trust b{display:block;color:var(--green);font-size:.82rem}.hero-trust span{display:block;color:var(--muted);font-size:.76rem;margin-top:3px}
+    .hero-visual{position:relative;min-height:620px}
+    .hero-photo{position:absolute;inset:0 0 55px 42px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);background:var(--green)}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.75) contrast(1.04)}
+    .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(13,40,24,.55))}
+    .hero-float{position:absolute;left:0;bottom:0;width:min(410px,88%);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:24px;border-radius:18px}
+    .hero-float strong{font-size:1.15rem;color:var(--green)}.hero-float p{color:var(--muted);font-size:.88rem;margin-top:7px}.hero-float small{display:flex;align-items:center;gap:8px;color:var(--gold);font-weight:800;margin-top:13px}.hero-float small::before{content:"";width:8px;height:8px;background:var(--gold);border-radius:50%}
+
+    /* Scroll-driven photo sequence — first section */
+    .story{height:560vh;position:relative;background:#08160e;border-top:0}
+    .story-sticky{position:sticky;top:0;height:100vh;overflow:hidden;background:#08160e}
+    .scene-viewport{position:absolute;inset:0;overflow:hidden;background:#08160e}
+    .story-images{position:absolute;inset:0;overflow:hidden;background:#08160e}
+    .story-image{
+      position:absolute;inset:-2.5%;width:105%;height:105%;object-fit:cover;object-position:center;
+      opacity:0;transform:translate3d(0,0,0) scale(1.035);will-change:opacity,transform;
+      filter:saturate(.88) contrast(1.04) brightness(.88)
+    }
+    .story-image:first-child{opacity:1}
+    .story-image:nth-child(1){object-position:center center}
+    .story-image:nth-child(2){object-position:center center}
+    .story-image:nth-child(3){object-position:center center}
+    .story-image:nth-child(4){object-position:center center}
+    .story-image:nth-child(5){object-position:center center}
+    .story-shade{
+      position:absolute;inset:0;z-index:2;pointer-events:none;
+      background:
+        linear-gradient(90deg,rgba(5,17,10,.72) 0%,rgba(5,17,10,.38) 37%,rgba(5,17,10,.08) 68%,rgba(5,17,10,.22) 100%),
+        linear-gradient(180deg,rgba(0,0,0,.30) 0%,transparent 35%,rgba(0,0,0,.38) 100%)
+    }
+    .story-ui{position:absolute;inset:0;z-index:10;pointer-events:none}
+    .story-title{position:absolute;left:clamp(20px,5vw,80px);top:110px;max-width:560px}
+    .story-title .overline{font-size:.72rem;font-weight:900;color:var(--gold-2);letter-spacing:.15em;text-transform:uppercase}
+    .story-title h2{font-size:clamp(2.25rem,4.6vw,5rem);line-height:.97;letter-spacing:-.05em;color:#fff;margin-top:13px;text-shadow:0 3px 24px rgba(0,0,0,.35)}
+    .stage-card{position:absolute;left:clamp(20px,5vw,80px);bottom:clamp(28px,7vh,85px);width:min(500px,calc(100% - 40px));background:rgba(255,255,255,.92);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,.42);box-shadow:0 24px 70px rgba(0,0,0,.25);border-radius:20px;padding:24px 25px;transition:opacity .24s,transform .24s}
+    .stage-meta{display:flex;justify-content:space-between;color:var(--gold);font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    .stage-card h3{font-size:clamp(1.55rem,2.7vw,2.6rem);line-height:1.02;color:var(--green);margin-top:13px}
+    .stage-card p{color:var(--muted);margin-top:12px;font-size:.96rem}
+    .progress{position:absolute;right:34px;top:50%;transform:translateY(-50%);height:38vh;width:4px;border-radius:4px;background:rgba(255,255,255,.28)}
+    .progress span{display:block;width:100%;height:0;background:var(--gold-2);border-radius:4px}
+    .progress-dots{position:absolute;right:27px;top:31%;height:38vh;display:flex;flex-direction:column;justify-content:space-between}
+    .progress-dots i{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.72);background:rgba(8,22,14,.48);transition:.2s}
+    .progress-dots i.active{background:var(--gold-2);border-color:var(--gold-2);transform:scale(1.18)}
+    .scroll-label{position:absolute;right:28px;bottom:25px;color:rgba(255,255,255,.7);font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;writing-mode:vertical-rl}
+
+    /* KERNX Live */
+    .live-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:74px;align-items:center}
+    .live-copy h2{font-size:clamp(2.55rem,5vw,5.6rem);line-height:.97;letter-spacing:-.05em;color:#fff;margin-top:18px}.live-copy p{font-size:1.08rem;color:rgba(255,255,255,.7);margin-top:22px;max-width:620px}
+    .live-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:31px}.live-point{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.045);padding:16px 17px;border-radius:8px}.live-point b{display:block;color:var(--gold-2);font-size:.86rem}.live-point span{display:block;color:rgba(255,255,255,.62);font-size:.79rem;margin-top:4px}
+    .app-shell{position:relative;padding:26px;border:1px solid rgba(255,255,255,.16);border-radius:28px;background:rgba(255,255,255,.06);box-shadow:0 30px 80px rgba(0,0,0,.24)}
+    .app-window{background:#f6f7f3;border-radius:19px;overflow:hidden;color:var(--ink);min-height:540px}.app-top{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px}.app-top b{color:var(--green)}.app-users{display:flex;align-items:center}.app-users i{width:32px;height:32px;border-radius:50%;background:var(--green);border:3px solid #fff;margin-left:-8px}.app-users i:nth-child(2){background:var(--gold)}
+    .app-body{display:grid;grid-template-columns:160px 1fr;min-height:472px}.app-side{padding:22px 15px;background:#edf0eb;border-right:1px solid var(--line)}.app-side span{display:block;padding:11px 12px;border-radius:6px;color:var(--muted);font-size:.78rem;margin-bottom:6px}.app-side span.active{background:var(--green);color:#fff}
+    .app-content{padding:25px}.app-content-head{display:flex;justify-content:space-between;align-items:center;gap:20px}.app-content-head h3{color:var(--green);font-size:1.4rem}.app-content-head small{padding:7px 10px;background:#e1f0e3;color:#2e6b3d;border-radius:999px;font-weight:760}
+    .app-route{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:24px}.app-route div{height:7px;border-radius:8px;background:#dce2db}.app-route div.done{background:var(--gold)}
+    .app-card{background:#fff;border:1px solid var(--line);padding:17px;border-radius:11px;margin-top:15px}.app-card-head{display:flex;justify-content:space-between;gap:20px}.app-card-head b{color:var(--green)}.app-card-head span{font-size:.72rem;color:var(--gold);font-weight:800}.app-card p{font-size:.79rem;color:var(--muted);margin-top:7px}.app-photo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:13px}.app-photo-row i{display:block;aspect-ratio:1.35;border-radius:7px;background:linear-gradient(145deg,#b7c9b3,#849e80)}.app-photo-row i:nth-child(2){background:linear-gradient(145deg,#d5c49c,#9c7c48)}.app-photo-row i:nth-child(3){background:linear-gradient(145deg,#aab9c2,#718794)}
+    .app-link{position:absolute;right:-20px;bottom:45px;background:#fff;color:var(--green);border:1px solid var(--line);box-shadow:var(--shadow);padding:16px 18px;border-radius:12px;font-weight:820}.app-link span{display:block;color:var(--muted);font-size:.7rem;font-weight:600}
+
+    /* Services */
+    .services-grid{display:grid;grid-template-columns:repeat(2,1fr);border:1px solid var(--line);background:var(--line);gap:1px}.service{background:#fff;padding:35px;min-height:245px;display:flex;flex-direction:column;transition:.25s var(--ease)}.service:hover{background:var(--green);color:#fff}.service-no{font-size:.73rem;font-weight:900;letter-spacing:.12em;color:var(--gold)}.service h3{font-size:1.48rem;line-height:1.12;color:var(--green);margin-top:24px}.service:hover h3{color:#fff}.service p{color:var(--muted);font-size:.94rem;margin-top:12px}.service:hover p{color:rgba(255,255,255,.68)}.service small{margin-top:auto;padding-top:24px;color:#8b938d;font-size:.73rem}.service:hover small{color:rgba(255,255,255,.5)}
+
+
+    /* Image gallery — replace local files, keep the filenames */
+    .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:14px}
+    .gallery-item{position:relative;overflow:hidden;border-radius:16px;background:var(--green);box-shadow:0 12px 34px rgba(13,40,24,.09)}
+    .gallery-item:nth-child(1){grid-column:span 7;grid-row:span 3}.gallery-item:nth-child(2){grid-column:span 5;grid-row:span 2}.gallery-item:nth-child(3){grid-column:span 5;grid-row:span 2}.gallery-item:nth-child(4){grid-column:span 4;grid-row:span 2}.gallery-item:nth-child(5){grid-column:span 4;grid-row:span 2}.gallery-item:nth-child(6){grid-column:span 4;grid-row:span 2}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease);filter:saturate(.8) contrast(1.03)}.gallery-item:hover img{transform:scale(1.035)}
+    .gallery-caption{position:absolute;inset:auto 0 0;padding:36px 18px 16px;color:#fff;background:linear-gradient(transparent,rgba(7,21,13,.78));font-size:.8rem;font-weight:750}
+
+    /* Workflow */
+    .workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.work-step{background:#fff;border:1px solid var(--line);padding:26px;border-radius:11px}.work-step b{font-size:2rem;color:var(--gold)}.work-step h3{font-size:1.15rem;color:var(--green);margin-top:22px}.work-step p{font-size:.88rem;color:var(--muted);margin-top:9px}
+
+    /* Company */
+    .company-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}.company-copy h2{font-size:clamp(2.55rem,5vw,5.6rem);line-height:.98;letter-spacing:-.05em;color:var(--green);margin-top:18px}.company-copy>p{font-size:1.06rem;color:var(--muted);margin-top:22px;max-width:650px}.roles{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}.role{border-top:3px solid var(--gold);background:#fff;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px}.role small{color:var(--gold);font-weight:850;text-transform:uppercase;letter-spacing:.08em}.role h3{color:var(--green);margin-top:7px}.role p{color:var(--muted);font-size:.82rem;margin-top:6px}.company-image{position:relative}.company-image img{width:100%;height:620px;object-fit:cover;border-radius:22px;box-shadow:var(--shadow)}.company-note{position:absolute;left:-25px;bottom:35px;width:310px;background:var(--green);color:#fff;padding:22px;border-radius:12px;box-shadow:var(--shadow)}.company-note strong{font-size:1.12rem}.company-note p{color:rgba(255,255,255,.65);font-size:.81rem;margin-top:7px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:72px}.contact-copy h2{font-size:clamp(2.5rem,5vw,5.5rem);line-height:.98;letter-spacing:-.05em;margin-top:18px}.contact-copy p{color:rgba(255,255,255,.7);margin-top:20px}.direct-links{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:30px}.direct-links a{font-size:1.08rem;border-bottom:1px solid rgba(255,255,255,.27)}
+    .form{background:#fff;color:var(--ink);padding:30px;border-radius:16px;display:flex;flex-direction:column;gap:17px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:.8rem;font-weight:750;color:var(--green)}.field input,.field textarea,.field select{border:1px solid var(--line);background:#fafbf8;color:var(--ink);padding:13px 14px;border-radius:6px;outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}.field textarea{min-height:125px;resize:vertical}.form-note{font-size:.73rem;color:var(--muted)}
+
+    /* Footer */
+    footer{background:#07150d;color:#fff;padding:60px 0 25px}.footer-grid{display:grid;grid-template-columns:1.35fr .8fr .9fr;gap:50px}.footer-brand img{width:135px;filter:brightness(1.12)}.footer-brand p{max-width:430px;color:rgba(255,255,255,.62);margin-top:15px}.footer-title{color:var(--gold-2);text-transform:uppercase;font-size:.72rem;font-weight:900;letter-spacing:.12em}.footer-links{display:flex;flex-direction:column;gap:9px;color:rgba(255,255,255,.68);font-size:.86rem;margin-top:16px}.footer-bottom{margin-top:42px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:rgba(255,255,255,.45);font-size:.74rem}
+
+    @media(max-width:1050px){
+      .nav-links{display:none}.menu-btn{display:flex}
+      .hero-grid,.live-grid,.company-grid,.contact-grid{grid-template-columns:1fr}
+      .hero-visual{min-height:560px}.hero-photo{left:0}
+      .company-image{max-width:760px}.company-note{left:18px}
+      .workflow{grid-template-columns:repeat(2,1fr)}
+      .gallery-grid{grid-auto-rows:130px}
+    }
+    @media(max-width:760px){
+      :root{--header:70px}.container{width:min(var(--container),calc(100% - 28px))}.brand img{width:98px;height:58px}
+      .section{padding:82px 0}.hero{padding-top:115px}.hero-logo{width:145px}.hero h1{font-size:clamp(3.2rem,15vw,5.6rem)}
+      .hero-trust{grid-template-columns:1fr}.hero-visual{min-height:460px}.hero-photo{inset:0 0 48px 0;border-radius:20px}.hero-float{padding:18px}
+      .story{height:500vh}.story-title{top:86px;max-width:82%}.story-title h2{font-size:2.55rem}.progress,.progress-dots,.scroll-label{display:none}.stage-card{bottom:18px;padding:18px}
+      .world{width:800vw}.zone{width:100vw}.z1{left:0}.z2{left:100vw}.z3{left:200vw}.z4{left:300vw}.z5{left:400vw}.z6{left:500vw}.z7{left:600vw}.z8{left:700vw}
+      .worker{transform:scale(.8)}.excavator{transform:scale(.78);transform-origin:left bottom}.report-card{transform:scale(.76);transform-origin:left top}
+      .gallery-grid{grid-template-columns:1fr;grid-auto-rows:260px}.gallery-item:nth-child(n){grid-column:auto;grid-row:auto}
+      .live-points,.services-grid,.roles,.form-row{grid-template-columns:1fr}.app-shell{padding:12px}.app-body{grid-template-columns:1fr}.app-side{display:none}.app-link{right:8px;bottom:22px}.app-window{min-height:480px}.app-content{padding:18px}
+      .workflow{grid-template-columns:1fr}.company-image img{height:470px}.company-note{position:relative;left:auto;bottom:auto;width:auto;margin:-35px 16px 0}
+      .footer-grid{grid-template-columns:1fr}
+    }
+
+    @media(max-width:760px){
+      .story-image{inset:-1%;width:102%;height:102%;object-position:center center}
+      .story-shade{background:linear-gradient(180deg,rgba(5,17,10,.56) 0%,rgba(5,17,10,.10) 42%,rgba(5,17,10,.64) 100%)}
+      .story-title{max-width:88%}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.story-image{will-change:auto}.intro-logo-wrap,.intro-line,.intro-claim{animation:none;opacity:1;transform:none}}
+  </style>
+</head>
+<body class="intro-active">
+<div aria-label="KERNX BAU lädt" class="site-intro" id="siteIntro">
+<div class="intro-logo-wrap">
+<img alt="KERNX BAU" src="kernx-bau-logo.png"/>
+<div class="intro-line"></div>
+<div class="intro-claim">Die neue Bauklarheit.</div>
+</div>
+<button class="intro-skip" id="introSkip" type="button">Überspringen</button>
+</div>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="site-header" id="header">
+<div class="container nav">
+<a aria-label="KERNX BAU Startseite" class="brand" href="#prozess"><img alt="KERNX BAU" src="kernx-bau-logo.png"/></a>
+<nav aria-label="Hauptnavigation" class="nav-links">
+<a href="#prozess">Prozess</a><a href="#bauklarheit">Bauklarheit</a><a href="#kernx-live">KERNX Live</a><a href="#leistungen">Leistungen</a><a href="#ueber-uns">Über uns</a><a class="nav-cta" href="#kontakt">Projekt anfragen</a>
+</nav>
+<button aria-expanded="false" aria-label="Menü öffnen" class="menu-btn" id="menuBtn" type="button"><span></span></button>
+</div>
+</header>
+<nav aria-label="Mobile Navigation" class="mobile-menu" id="mobileMenu">
+<a href="#prozess">Prozess</a><a href="#bauklarheit">Bauklarheit</a><a href="#kernx-live">KERNX Live</a><a href="#leistungen">Leistungen</a><a href="#ueber-uns">Über uns</a><a class="nav-cta" href="#kontakt">Projekt anfragen</a>
+</nav>
+<main id="main"><section aria-label="Scrollgesteuerter Arbeitsablauf" class="story" id="prozess">
+<div class="story-sticky">
+<div class="scene-viewport">
+<div class="story-images" id="storyImages" aria-hidden="true">
+<img class="story-image" src="kernx-prozess-01-vorbereitung.jpg" alt="" loading="eager" decoding="async"/>
+<img class="story-image" src="kernx-prozess-02-aushub.jpg" alt="" loading="eager" decoding="async"/>
+<img class="story-image" src="kernx-prozess-03-leerrohre.jpg" alt="" loading="eager" decoding="async"/>
+<img class="story-image" src="kernx-prozess-04-verfuellung.jpg" alt="" loading="eager" decoding="async"/>
+<img class="story-image" src="kernx-prozess-05-abschluss.jpg" alt="" loading="eager" decoding="async"/>
+</div>
+<div class="story-shade"></div>
+</div>
+<div class="story-ui">
+<div class="story-title"><div class="overline">Ein Bauabschnitt in fünf Schritten</div><h2>Die Baustelle bewegt sich mit.</h2></div>
+<article class="stage-card" id="stageCard"><div class="stage-meta"><span id="stageNo">01 / 05</span><span id="stageTag">Vorbereitung</span></div><h3 id="stageTitle">Arbeitsbereich klar vorbereiten.</h3><p id="stageText">Absicherung und Arbeitsfläche werden für den vereinbarten Bauabschnitt vorbereitet.</p></article>
+<div class="progress"><span id="progressBar"></span></div><div class="progress-dots" id="storyDots"></div><div class="scroll-label">Scroll to explore</div>
+</div>
+</div>
+</section><section class="hero" id="bauklarheit">
+<div class="container hero-grid">
+<div>
+<img alt="KERNX BAU Logo" class="hero-logo" src="kernx-bau-logo.png"/>
+<div class="eyebrow">Nachunternehmer · Hannover</div>
+<h1>Die neue <span>Bauklarheit.</span></h1>
+<div class="hero-promise"><span>Was ausgeführt ist, ist sichtbar.</span><span>Was offen ist, ebenfalls.</span></div>
+<p class="hero-copy">Klar abgegrenzte Leistungen im Erdkabel-, Leerrohr- und Breitbandausbau – mit direkter Abstimmung, strukturierter Ausführung und gemeinsamem Projektstand.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="#kontakt">Projekt anfragen</a><a class="btn btn-secondary" href="#kernx-live">KERNX Live ansehen</a></div>
+<div class="hero-trust">
+<div><b>Direkte Abstimmung</b><span>Geschäftsführer als klarer Ansprechpartner</span></div>
+<div><b>Klare Zusage</b><span>Nach Prüfung von Umfang und Schnittstellen</span></div>
+<div><b>Gemeinsamer Stand</b><span>KERNX Live ab November 2026</span></div>
+</div>
+</div>
+<div class="hero-visual">
+<div class="hero-photo">
+        <!-- BILD AUSTAUSCHEN: kernx-hero-baustelle.jpg | empfohlen: Querformat 1600×1200 px oder größer --><img alt="Arbeitsszene im Leitungs- und Grabenbau" src="kernx-hero-baustelle.jpg"/></div>
+<div class="hero-float"><strong>Ein Abschnitt. Ein klarer Ablauf.</strong><p>Vom geöffneten Pflasterbereich bis zur wiederhergestellten Oberfläche bleibt jeder Schritt dem Bauabschnitt zugeordnet.</p><small>Scrollgesteuerte Prozessdarstellung</small></div>
+</div>
+</div>
+</section>
+
+
+<section class="section green" id="kernx-live">
+<div class="container live-grid">
+<div class="live-copy">
+<div class="eyebrow">KERNX Live · Aktivierung ab November 2026</div>
+<h2>Ein gemeinsamer Projektkanal. Von Anfang an klar.</h2>
+<p>KERNX Live wird ab November 2026 schrittweise für Projekte aktiviert. Das System ist dafür vorbereitet, KERNX BAU, Auftraggeber und Generalunternehmer in einem gemeinsamen, projektbezogenen Bereich zu verbinden. Bauabschnitte, Fotos, Rückmeldungen, offene Punkte und nächste Schritte sollen damit an einer Stelle zusammengeführt werden.</p>
+<div class="live-points">
+<div class="live-point"><b>Gemeinsamer Zugang</b><span>Ab Aktivierung projektbezogen für die beteiligten Ansprechpartner.</span></div>
+<div class="live-point"><b>Bauabschnitte</b><span>Rückmeldungen bleiben dem richtigen Abschnitt zugeordnet.</span></div>
+<div class="live-point"><b>Fotos und Status</b><span>Arbeitsstand und Ausführung werden strukturiert sichtbar.</span></div>
+<div class="live-point"><b>Offene Punkte</b><span>Nächster Schritt und Klärungsbedarf bleiben nachvollziehbar.</span></div>
+</div>
+</div>
+<div aria-label="KERNX Live Benutzeroberfläche" class="app-shell">
+<div class="app-window">
+<div class="app-top"><b>KERNX LIVE</b><div aria-label="KERNX BAU und Auftraggeber" class="app-users"><i></i><i></i></div></div>
+<div class="app-body">
+<aside class="app-side"><span class="active">Projektübersicht</span><span>Bauabschnitte</span><span>Fotostand</span><span>Offene Punkte</span><span>Dokumente</span></aside>
+<div class="app-content">
+<div class="app-content-head"><h3>Bauabschnitt 03</h3><small>Funktionsvorschau</small></div>
+<div class="app-route"><div class="done"></div><div class="done"></div><div class="done"></div><div></div></div>
+<div class="app-card"><div class="app-card-head"><b>Beispielhafter Stand</b><span>Projektvorschau</span></div><p>Leerrohre eingebracht. Sandbett und Verfüllung als nächster Schritt.</p><div class="app-photo-row"><i></i><i></i><i></i></div></div>
+<div class="app-card"><div class="app-card-head"><b>Offener Punkt</b><span>Klärung</span></div><p>Übergang zum nächsten Bauabschnitt mit der Projektleitung abstimmen.</p></div>
+<div class="app-card"><div class="app-card-head"><b>Nächster Schritt</b><span>Geplant</span></div><p>Verfüllen, verdichten und Oberfläche im bearbeiteten Bereich schließen.</p></div>
+</div>
+</div>
+</div>
+<div class="app-link">KERNX BAU × Auftraggeber<span>Aktivierung ab November 2026</span></div>
+</div>
+</div>
+</section>
+<section class="section white" id="leistungen">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Leistungen</div><h2 class="section-title">Klar gebündelt. Projektbezogen vereinbart.</h2><p class="section-lede">Von der Trasse bis zur dokumentierten Übergabe übernimmt KERNX BAU klar abgegrenzte Nachunternehmerleistungen im vereinbarten Projektumfang.</p></div>
+<div class="services-grid">
+<article class="service"><span class="service-no">01</span><h3>Trassen- und Erdarbeiten</h3><p>Bagger- und Erdbewegungsarbeiten, Gräben, Ausschachtungen und vorbereitende Arbeiten für Kabel- und Leerrohrtrassen.</p><small>Umfang, Oberfläche und Schnittstellen werden vor Beginn geklärt.</small></article>
+<article class="service"><span class="service-no">02</span><h3>Leerrohr- und Breitbandausbau</h3><p>Verlegung von Leerrohren und Mikrorohrverbänden sowie zugehörige Arbeiten im konkret vereinbarten Leistungsrahmen.</p><small>Ausführung nach Projektvorgaben und abgestimmtem Aufbau.</small></article>
+<article class="service"><span class="service-no">03</span><h3>Verfüllung und Oberfläche</h3><p>Einbettung, Verfüllung, Verdichtung und Wiederherstellung zuvor selbst geöffneter Beläge im direkten Zusammenhang mit den ausgeführten Erdkabelarbeiten.</p><small>Keine eigenständige Vermarktung von Pflasterarbeiten.</small></article>
+<article class="service"><span class="service-no">04</span><h3>Baustellenunterstützung</h3><p>Baustellenlogistik, projektbezogene Transporte bis 3,5 t, begleitende nicht erlaubnispflichtige Arbeiten sowie technische Dokumentation.</p><small>Personal, Fahrzeuge und Abläufe werden projektbezogen abgestimmt.</small></article>
+</div>
+</div>
+</section>
+<section class="section soft" id="arbeitsweise">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Arbeitsweise</div><h2 class="section-title">Prüfen. Vereinbaren. Ausführen. Übergeben.</h2><p class="section-lede">Die Zusage folgt der Prüfung. So bleiben Umfang, Verantwortung und nächster Schritt für beide Seiten klar.</p></div>
+<div class="workflow">
+<article class="work-step"><b>01</b><h3>Projektdaten</h3><p>Ort, Zeitraum, Leistungsumfang, Oberflächen und vorhandene Unterlagen werden übermittelt.</p></article>
+<article class="work-step"><b>02</b><h3>Prüfung</h3><p>Kapazität, Maschinen, Material, Schnittstellen und Verantwortlichkeiten werden abgestimmt.</p></article>
+<article class="work-step"><b>03</b><h3>Ausführung</h3><p>Der vereinbarte Bauabschnitt wird strukturiert bearbeitet und projektbezogen dokumentiert.</p></article>
+<article class="work-step"><b>04</b><h3>Übergabe</h3><p>Ausführung, offene Punkte und Abschlussstand werden passend zum Projektablauf zusammengeführt.</p></article>
+</div>
+</div>
+</section>
+<section class="section white" id="ueber-uns">
+<div class="container company-grid">
+<div class="company-copy">
+<div class="eyebrow">Über uns</div>
+<h2>Direkte Verantwortung. Bereit für den Projektstart.</h2>
+<p>KERNX BAU UG (haftungsbeschränkt) ist ein 2026 gegründetes, inhabergeführtes Nachunternehmen mit Sitz in Hannover. Projektklärung, Auftraggeber-Kommunikation, kaufmännische Entscheidungen und die Koordination der Ausführung werden direkt geführt – mit kurzen Wegen und einem klaren Ansprechpartner.</p>
+<p>Das Unternehmen ist neu gegründet. die projektbezogen eingesetzten Mitarbeiter bringen praktische Erfahrung aus Erd-, Leitungs- und Glasfaserprojekten in Deutschland mit. Arbeitsabläufe, Einsatzplanung und Dokumentationsstruktur sind vorbereitet, damit ein geprüfter Bauabschnitt geordnet und ohne unnötige Reibungsverluste starten kann.</p>
+<div class="roles">
+<article class="role"><small>Geschäftsführer</small><h3>Yousef Darwish</h3><p>Direkter Ansprechpartner für Projektklärung, Auftraggeber-Kommunikation, kaufmännische Entscheidungen und verbindliche Zusagen. Praktische Erfahrung im Baustellenumfeld fließt unmittelbar in Vorbereitung und Abstimmung ein.</p></article>
+<article class="role"><small>Projektstart</small><h3>Bereit nach klarer Prüfung</h3><p>Personal, Einsatzumfang, Maschinen, Material und Schnittstellen werden projektbezogen geprüft. Nach eindeutiger Abstimmung starten wir strukturiert, verbindlich und mit einem definierten Ablauf.</p></article>
+</div>
+</div>
+<div class="company-image"><!-- BILD AUSTAUSCHEN: kernx-unternehmen-team.jpg | empfohlen: Hochformat 1200×1500 px --><img alt="Direkte Projektabstimmung bei KERNX BAU" src="kernx-unternehmen-team.jpg"/><div class="company-note"><strong>Kurze Wege.</strong><p>Projektfragen und Entscheidungen werden direkt geführt. Wir sagen nur zu, wenn Umfang, Kapazität und Schnittstellen klar sind.</p></div></div>
+</div>
+</section>
+<section class="section green" id="kontakt">
+<div class="container contact-grid">
+<div class="contact-copy"><div class="eyebrow">Kontakt</div><h2>Konkreter Bauabschnitt?</h2><p>Senden Sie uns Projektort, Zeitraum, Leistungsumfang und vorhandene Unterlagen. Wir prüfen offen, ob Umfang und Schnittstellen fachlich und organisatorisch zu uns passen.</p><div class="direct-links"><a href="tel:+4917661389235">+49 176 61389235</a><a href="mailto:contact@kernxbau.de">contact@kernxbau.de</a></div></div>
+<!-- KONTAKTFORMULAR: erzeugt eine E-Mail an contact@kernxbau.de; kein serverseitiger Versand --><form class="form" id="projectForm">
+<div class="form-row"><div class="field"><label for="name">Name</label><input autocomplete="name" id="name" name="name" required=""/></div><div class="field"><label for="company">Unternehmen</label><input autocomplete="organization" id="company" name="company"/></div></div>
+<div class="form-row"><div class="field"><label for="email">E-Mail</label><input autocomplete="email" id="email" name="email" required="" type="email"/></div><div class="field"><label for="phone">Telefon</label><input autocomplete="tel" id="phone" name="phone"/></div></div>
+<div class="form-row"><div class="field"><label for="location">Projektort</label><input id="location" name="location"/></div><div class="field"><label for="period">Zeitraum</label><input id="period" name="period"/></div></div>
+<div class="field"><label for="scope">Leistungsumfang</label><select id="scope" name="scope"><option>Erd- und Grabungsarbeiten</option><option>Leerrohr- / Mikrorohrverlegung</option><option>Hausanschlüsse / Ausschachtungen</option><option>Verfüllung und Oberfläche</option><option>Projektbezogene Anfrage</option></select></div>
+<div class="field"><label for="message">Nachricht</label><textarea id="message" name="message" placeholder="Kurze Angaben zum Bauabschnitt, vorhandenen Unterlagen und den vorgesehenen Schnittstellen."></textarea></div>
+<button class="btn btn-primary" type="submit">Projektanfrage per E-Mail öffnen</button>
+<p class="form-note">Der Button öffnet Ihr lokales E-Mail-Programm. Über diese Website erfolgt kein automatischer Formularversand.</p>
+</form>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><img alt="KERNX BAU" src="kernx-bau-logo.png"/><p>Nachunternehmer aus Hannover für klar vereinbarte Leistungen im Erdkabel-, Leerrohr- und Breitbandausbau.</p></div>
+<div><div class="footer-title">Navigation</div><div class="footer-links"><a href="#prozess">Prozess</a><a href="#bauklarheit">Bauklarheit</a><a href="#kernx-live">KERNX Live</a><a href="#leistungen">Leistungen</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a></div></div>
+<div><div class="footer-title">Kontakt</div><div class="footer-links"><a href="tel:+4917661389235">+49 176 61389235</a><a href="mailto:contact@kernxbau.de">contact@kernxbau.de</a><span>Deisterstraße 30<br/>30449 Hannover</span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div>
+</div>
+<div class="footer-bottom"><span>© 2026 KERNX BAU UG (haftungsbeschränkt)</span><span>Geschäftsführer: Yousef Darwish · B2B Nachunternehmer</span></div>
+</div>
+</footer>
+<script>
+(() => {
+  const header = document.getElementById('header');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const siteIntro = document.getElementById('siteIntro');
+  const introSkip = document.getElementById('introSkip');
+  const story = document.querySelector('.story');
+  const storyImages = [...document.querySelectorAll('.story-image')];
+  const stageCard = document.getElementById('stageCard');
+  const stageNo = document.getElementById('stageNo');
+  const stageTag = document.getElementById('stageTag');
+  const stageTitle = document.getElementById('stageTitle');
+  const stageText = document.getElementById('stageText');
+  const progressBar = document.getElementById('progressBar');
+  const dotsWrap = document.getElementById('storyDots');
+
+  function closeIntro(){
+    if(!siteIntro || siteIntro.classList.contains('is-hidden')) return;
+    siteIntro.classList.add('is-hidden');
+    document.body.classList.remove('intro-active');
+    setTimeout(()=>siteIntro.remove(),800);
+  }
+  introSkip?.addEventListener('click',closeIntro);
+  addEventListener('load',()=>setTimeout(closeIntro,2050),{once:true});
+  setTimeout(closeIntro,3200);
+
+  const stages = [
+    {tag:'Vorbereitung',title:'Arbeitsbereich klar vorbereiten.',text:'Absicherung und Arbeitsfläche werden für den vereinbarten Bauabschnitt vorbereitet.'},
+    {tag:'Aushub',title:'Pflaster aufnehmen. Graben herstellen.',text:'Der Arbeitsbereich wird geöffnet und der Graben kontrolliert hergestellt.'},
+    {tag:'Leerrohre',title:'Leitungsweg sichtbar ausführen.',text:'Leerrohre werden im abgestimmten Aufbau eingebracht und dem Bauabschnitt zugeordnet.'},
+    {tag:'Verfüllung',title:'Verfüllen und verdichten.',text:'Der Aufbau wird schrittweise geschlossen und für die Wiederherstellung vorbereitet.'},
+    {tag:'Abschluss',title:'Oberfläche wieder geschlossen.',text:'Der bearbeitete Abschnitt ist wiederhergestellt und sauber abgeschlossen.'}
+  ];
+  stages.forEach((_,i)=>{const dot=document.createElement('i');if(i===0)dot.classList.add('active');dotsWrap.appendChild(dot)});
+  const dots=[...dotsWrap.children]; let lastStage=-1; let ticking=false;
+  const clamp=(n,min,max)=>Math.min(Math.max(n,min),max);
+
+  function updateStory(){
+    ticking=false;
+    const rect=story.getBoundingClientRect();
+    const travel=Math.max(1,story.offsetHeight-innerHeight);
+    const progress=clamp(-rect.top/travel,0,1);
+    const scaled=progress*(stages.length-1);
+    const index=Math.min(stages.length-1,Math.floor(scaled+.0001));
+    const next=Math.min(stages.length-1,index+1);
+    const local=scaled-index;
+    storyImages.forEach((image,imageIndex)=>{
+      let opacity=0;
+      let phase=0;
+      if(imageIndex===index){
+        opacity=index===next?1:1-local;
+        phase=local;
+      }else if(imageIndex===next){
+        opacity=local;
+        phase=local-1;
+      }
+      const direction=imageIndex%2===0?1:-1;
+      const moveX=direction*phase*18;
+      const moveY=phase*-6;
+      const scale=1.035+Math.abs(phase)*.025;
+      image.style.opacity=String(opacity);
+      image.style.transform=`translate3d(${moveX}px,${moveY}px,0) scale(${scale})`;
+      image.style.zIndex=String(imageIndex===next?2:1);
+    });
+    progressBar.style.height=`${progress*100}%`;
+    if(index!==lastStage){
+      lastStage=index;stageCard.style.opacity='0';stageCard.style.transform='translateY(12px)';
+      setTimeout(()=>{const s=stages[index];stageNo.textContent=`${String(index+1).padStart(2,'0')} / ${String(stages.length).padStart(2,'0')}`;stageTag.textContent=s.tag;stageTitle.textContent=s.title;stageText.textContent=s.text;dots.forEach((dot,i)=>dot.classList.toggle('active',i===index));stageCard.style.opacity='1';stageCard.style.transform='translateY(0)'},100);
+    }
+  }
+  function onScroll(){header.classList.toggle('scrolled',scrollY>30);if(!ticking){requestAnimationFrame(updateStory);ticking=true}}
+  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',updateStory);updateStory();
+
+  menuBtn.addEventListener('click',()=>{const open=menuBtn.getAttribute('aria-expanded')==='true';menuBtn.setAttribute('aria-expanded',String(!open));mobileMenu.classList.toggle('open',!open);document.body.classList.toggle('menu-open',!open)});
+  mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menuBtn.setAttribute('aria-expanded','false');mobileMenu.classList.remove('open');document.body.classList.remove('menu-open')}));
+
+  document.getElementById('projectForm').addEventListener('submit',e=>{
+    e.preventDefault();const data=new FormData(e.currentTarget);
+    const subject=`Projektanfrage – ${data.get('location')||'neuer Bauabschnitt'}`;
+    const body=[`Name: ${data.get('name')||''}`,`Unternehmen: ${data.get('company')||''}`,`E-Mail: ${data.get('email')||''}`,`Telefon: ${data.get('phone')||''}`,`Projektort: ${data.get('location')||''}`,`Zeitraum: ${data.get('period')||''}`,`Leistungsumfang: ${data.get('scope')||''}`,'',String(data.get('message')||'')].join('\n');
+    location.href=`mailto:contact@kernxbau.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+})();
+</script>
+</body>
+</html>
