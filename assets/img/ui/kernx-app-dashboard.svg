@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 860" width="1440" height="860" font-family="Inter, Segoe UI, system-ui, sans-serif" role="img" aria-label="Nachbildung der KERNX APP Oberfläche">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0B1411"/><stop offset=".55" stop-color="#0A110F"/><stop offset="1" stop-color="#070C0A"/>
+  </linearGradient>
+  <linearGradient id="au" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#C9A227"/><stop offset="1" stop-color="#EFC85B"/>
+  </linearGradient>
+  <linearGradient id="cy" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#49D6C4"/><stop offset="1" stop-color="#8BEEE1"/>
+  </linearGradient>
+  <linearGradient id="fadeAu" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#C9A227" stop-opacity=".34"/><stop offset="1" stop-color="#C9A227" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="fadeCy" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#49D6C4" stop-opacity=".26"/><stop offset="1" stop-color="#49D6C4" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#ffffff" stop-opacity=".055"/><stop offset="1" stop-color="#ffffff" stop-opacity=".012"/>
+  </linearGradient>
+  <radialGradient id="glowAu" cx=".5" cy=".5" r=".5">
+    <stop offset="0" stop-color="#C9A227" stop-opacity=".30"/><stop offset="1" stop-color="#C9A227" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowCy" cx=".5" cy=".5" r=".5">
+    <stop offset="0" stop-color="#49D6C4" stop-opacity=".26"/><stop offset="1" stop-color="#49D6C4" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+    <path d="M36 0H0V36" fill="none" stroke="#ffffff" stroke-opacity=".028" stroke-width="1"/>
+  </pattern>
+  <clipPath id="rounded"><rect x="0" y="0" width="1440" height="860" rx="18"/></clipPath>
+</defs>
+
+<g clip-path="url(#rounded)">
+  <rect width="1440" height="860" fill="url(#bg)"/>
+  <rect width="1440" height="860" fill="url(#grid)"/>
+  <ellipse cx="1180" cy="120" rx="420" ry="300" fill="url(#glowAu)"/>
+  <ellipse cx="300" cy="820" rx="460" ry="300" fill="url(#glowCy)"/>
+
+  <!-- ══ title bar ══ -->
+  <rect x="0" y="0" width="1440" height="54" fill="#0A100E"/>
+  <line x1="0" y1="54" x2="1440" y2="54" stroke="#ffffff" stroke-opacity=".08"/>
+  <circle cx="30" cy="27" r="5.5" fill="#E0563F" fill-opacity=".8"/>
+  <circle cx="50" cy="27" r="5.5" fill="#C9A227" fill-opacity=".8"/>
+  <circle cx="70" cy="27" r="5.5" fill="#49D6C4" fill-opacity=".8"/>
+  <rect x="470" y="14" width="500" height="27" rx="13.5" fill="#ffffff" fill-opacity=".05"/>
+  <path d="M492 21v-3a4 4 0 0 1 8 0v3" fill="none" stroke="#49D6C4" stroke-opacity=".8" stroke-width="1.5"/>
+  <rect x="488.5" y="21" width="15" height="10" rx="2" fill="none" stroke="#49D6C4" stroke-opacity=".8" stroke-width="1.5"/>
+  <text x="516" y="32" font-size="12.5" fill="#8FA69C" letter-spacing=".06em">127.0.0.1:8080 — KERNX BAU · Lokale Verwaltung</text>
+  <text x="1300" y="32" font-size="11" fill="#5F7369" letter-spacing=".16em" font-family="ui-monospace, monospace">OFFLINE · LOKAL</text>
+  <circle cx="1285" cy="27" r="4" fill="#49D6C4"/>
+
+  <!-- ══ sidebar ══ -->
+  <rect x="0" y="54" width="268" height="806" fill="#08100D"/>
+  <line x1="268" y1="54" x2="268" y2="860" stroke="#ffffff" stroke-opacity=".07"/>
+
+  <g transform="translate(28,84)">
+    <rect x="0" y="0" width="34" height="34" rx="8" fill="#123127"/>
+    <path d="M11 8v18M11 17l10-9M13.5 18l8 8" stroke="url(#au)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <text x="48" y="16" font-size="14.5" font-weight="700" fill="#F4F7F5" letter-spacing=".07em">KERNX APP</text>
+    <text x="48" y="30" font-size="10" fill="#5F7369" letter-spacing=".18em" font-family="ui-monospace, monospace">v2026.3 · LOKAL</text>
+  </g>
+
+  <g font-size="13" fill="#8FA69C">
+    <rect x="16" y="146" width="236" height="38" rx="9" fill="#C9A227" fill-opacity=".13"/>
+    <rect x="16" y="146" width="3" height="38" rx="1.5" fill="url(#au)"/>
+    <rect x="36" y="159" width="13" height="13" rx="2.5" fill="none" stroke="#EFC85B" stroke-width="1.5"/>
+    <text x="62" y="170" fill="#EFC85B" font-weight="600">Dashboard</text>
+
+    <text x="36" y="216" font-size="10" fill="#4C5E56" letter-spacing=".2em" font-family="ui-monospace, monospace">BELEGE UND ZAHLUNGEN</text>
+    <text x="36" y="248">Eingangsbelege</text><text x="36" y="280">Ausgangsrechnungen</text>
+    <text x="36" y="312">Zahlungen und Bank</text><text x="36" y="344">Beleg-Split</text>
+    <text x="36" y="376">Kasse</text>
+
+    <text x="36" y="418" font-size="10" fill="#4C5E56" letter-spacing=".2em" font-family="ui-monospace, monospace">PROJEKTE</text>
+    <text x="36" y="450">Kunden und Lieferanten</text><text x="36" y="482">Projekte</text>
+    <text x="36" y="514">LV-Positionen</text><text x="36" y="546">Aufmaß</text>
+
+    <text x="36" y="588" font-size="10" fill="#4C5E56" letter-spacing=".2em" font-family="ui-monospace, monospace">PERSONAL UND BETRIEB</text>
+    <text x="36" y="620">Personal</text><text x="36" y="652">Lohnabrechnungen</text>
+    <text x="36" y="684">Nachunternehmer</text><text x="36" y="716">Fahrzeuge und Geräte</text>
+  </g>
+
+  <rect x="16" y="762" width="236" height="66" rx="10" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".07"/>
+  <circle cx="44" cy="795" r="4" fill="#49D6C4"/>
+  <text x="60" y="789" font-size="11.5" fill="#B9C9C2">Datenbank lokal</text>
+  <text x="60" y="806" font-size="10" fill="#5F7369" font-family="ui-monospace, monospace" letter-spacing=".1em">KEINE CLOUD · KEIN ABO</text>
+
+  <!-- ══ main ══ -->
+  <text x="312" y="108" font-size="27" font-weight="700" fill="#F4F7F5" letter-spacing="-.01em">Dashboard</text>
+  <text x="312" y="134" font-size="13.5" fill="#7E9189">Plan, Ist und Prognose getrennt. Alle Werte stammen aus der lokalen Datenbank.</text>
+  <rect x="1180" y="88" width="228" height="36" rx="18" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".08"/>
+  <text x="1204" y="111" font-size="11.5" fill="#8FA69C" font-family="ui-monospace, monospace" letter-spacing=".12em">GESCHÄFTSJAHR 2026</text>
+
+  <text x="312" y="176" font-size="10.5" fill="#5F7369" letter-spacing=".2em" font-family="ui-monospace, monospace">LIQUIDITÄT (IST)</text>
+
+  <!-- KPI row -->
+  <g>
+    <rect x="312" y="190" width="258" height="122" rx="13" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="334" y="220" font-size="12" fill="#7E9189">Bankbestand Ist</text>
+    <text x="334" y="264" font-size="34" font-weight="700" fill="#F4F7F5">—</text>
+    <text x="334" y="288" font-size="11" fill="#5F7369">Anfangsbestand + Bewegungen</text>
+    <rect x="334" y="298" width="214" height="3" rx="1.5" fill="#ffffff" fill-opacity=".07"/>
+    <rect x="334" y="298" width="132" height="3" rx="1.5" fill="url(#au)"/>
+
+    <rect x="590" y="190" width="258" height="122" rx="13" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="612" y="220" font-size="12" fill="#7E9189">Gebundene Kautionen</text>
+    <text x="612" y="264" font-size="34" font-weight="700" fill="#F4F7F5">—</text>
+    <text x="612" y="288" font-size="11" fill="#5F7369">projektbezogen</text>
+    <rect x="612" y="298" width="214" height="3" rx="1.5" fill="#ffffff" fill-opacity=".07"/>
+    <rect x="612" y="298" width="74" height="3" rx="1.5" fill="url(#au)"/>
+
+    <rect x="868" y="190" width="258" height="122" rx="13" fill="url(#glass)" stroke="#49D6C4" stroke-opacity=".28"/>
+    <text x="890" y="220" font-size="12" fill="#7E9189">Verfügbare Liquidität</text>
+    <text x="890" y="264" font-size="34" font-weight="700" fill="#8BEEE1">—</text>
+    <text x="890" y="288" font-size="11" fill="#5F7369">nach Reserven</text>
+    <rect x="890" y="298" width="214" height="3" rx="1.5" fill="#ffffff" fill-opacity=".07"/>
+    <rect x="890" y="298" width="168" height="3" rx="1.5" fill="url(#cy)"/>
+
+    <rect x="1146" y="190" width="262" height="122" rx="13" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".08"/>
+    <text x="1168" y="220" font-size="12" fill="#7E9189">Steuerreserve</text>
+    <text x="1168" y="264" font-size="34" font-weight="700" fill="#EFC85B">—</text>
+    <text x="1168" y="288" font-size="11" fill="#5F7369">automatisch gebildet</text>
+    <rect x="1168" y="298" width="218" height="3" rx="1.5" fill="#ffffff" fill-opacity=".07"/>
+    <rect x="1168" y="298" width="96" height="3" rx="1.5" fill="url(#au)"/>
+  </g>
+
+  <text x="312" y="360" font-size="10.5" fill="#5F7369" letter-spacing=".2em" font-family="ui-monospace, monospace">GESCHÄFTSBEREICHE — PLAN GEGEN IST</text>
+
+  <!-- chart card -->
+  <rect x="312" y="376" width="674" height="278" rx="13" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".08"/>
+  <text x="336" y="408" font-size="14" font-weight="600" fill="#F4F7F5">Umsatzverlauf je Geschäftsbereich</text>
+  <g font-size="11" fill="#7E9189">
+    <rect x="336" y="424" width="9" height="9" rx="2" fill="#C9A227"/><text x="352" y="433">Erdkabel · Leerrohr · Breitband</text>
+    <rect x="556" y="424" width="9" height="9" rx="2" fill="#49D6C4"/><text x="572" y="433">KERNX 3D</text>
+  </g>
+  <g stroke="#ffffff" stroke-opacity=".05">
+    <line x1="336" y1="470" x2="962" y2="470"/><line x1="336" y1="518" x2="962" y2="518"/>
+    <line x1="336" y1="566" x2="962" y2="566"/><line x1="336" y1="614" x2="962" y2="614"/>
+  </g>
+  <path d="M336 596 L414 570 L492 578 L570 534 L648 542 L726 496 L804 506 L882 462 L962 448 L962 614 L336 614 Z" fill="url(#fadeAu)"/>
+  <path d="M336 596 L414 570 L492 578 L570 534 L648 542 L726 496 L804 506 L882 462 L962 448" fill="none" stroke="url(#au)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M336 608 L414 604 L492 596 L570 600 L648 584 L726 588 L804 570 L882 560 L962 548 L962 614 L336 614 Z" fill="url(#fadeCy)"/>
+  <path d="M336 608 L414 604 L492 596 L570 600 L648 584 L726 588 L804 570 L882 560 L962 548" fill="none" stroke="url(#cy)" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="962" cy="448" r="4.5" fill="#EFC85B"/><circle cx="962" cy="448" r="9" fill="none" stroke="#EFC85B" stroke-opacity=".35"/>
+  <circle cx="962" cy="548" r="4" fill="#8BEEE1"/>
+  <g font-size="10.5" fill="#5F7369" font-family="ui-monospace, monospace" letter-spacing=".08em">
+    <text x="336" y="636">Q1</text><text x="492" y="636">Q2</text><text x="648" y="636">Q3</text><text x="882" y="636">Q4</text>
+  </g>
+
+  <!-- right column -->
+  <rect x="1006" y="376" width="402" height="130" rx="13" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".08"/>
+  <text x="1030" y="408" font-size="14" font-weight="600" fill="#F4F7F5">Deckungsbeitrag je Projekt</text>
+  <g>
+    <text x="1030" y="440" font-size="11.5" fill="#7E9189">Abschnitt A</text>
+    <rect x="1140" y="431" width="200" height="8" rx="4" fill="#ffffff" fill-opacity=".06"/>
+    <rect x="1140" y="431" width="152" height="8" rx="4" fill="url(#au)"/>
+    <text x="1356" y="440" font-size="11.5" fill="#B9C9C2" text-anchor="end">—</text>
+
+    <text x="1030" y="466" font-size="11.5" fill="#7E9189">Abschnitt B</text>
+    <rect x="1140" y="457" width="200" height="8" rx="4" fill="#ffffff" fill-opacity=".06"/>
+    <rect x="1140" y="457" width="108" height="8" rx="4" fill="url(#au)"/>
+    <text x="1356" y="466" font-size="11.5" fill="#B9C9C2" text-anchor="end">—</text>
+
+    <text x="1030" y="492" font-size="11.5" fill="#7E9189">Hausanschlüsse</text>
+    <rect x="1140" y="483" width="200" height="8" rx="4" fill="#ffffff" fill-opacity=".06"/>
+    <rect x="1140" y="483" width="176" height="8" rx="4" fill="url(#cy)"/>
+    <text x="1356" y="492" font-size="11.5" fill="#B9C9C2" text-anchor="end">—</text>
+  </g>
+
+  <rect x="1006" y="524" width="402" height="130" rx="13" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".08"/>
+  <text x="1030" y="556" font-size="14" font-weight="600" fill="#F4F7F5">Offene Posten</text>
+  <g transform="translate(1058,608)">
+    <circle r="42" fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="9"/>
+    <circle r="42" fill="none" stroke="url(#au)" stroke-width="9" stroke-linecap="round"
+            stroke-dasharray="180 264" transform="rotate(-90)"/>
+    <text y="6" font-size="20" font-weight="700" fill="#F4F7F5" text-anchor="middle">—</text>
+  </g>
+  <g font-size="11.5" fill="#7E9189">
+    <circle cx="1136" cy="586" r="4" fill="#C9A227"/><text x="1150" y="590">fällig innerhalb 14 Tagen</text>
+    <circle cx="1136" cy="612" r="4" fill="#49D6C4"/><text x="1150" y="616">nicht fällig</text>
+    <circle cx="1136" cy="638" r="4" fill="#E0563F"/><text x="1150" y="642">überfällig</text>
+  </g>
+
+  <!-- bottom: LV / Aufmaß table -->
+  <rect x="312" y="676" width="1096" height="160" rx="13" fill="url(#glass)" stroke="#ffffff" stroke-opacity=".08"/>
+  <text x="336" y="708" font-size="14" font-weight="600" fill="#F4F7F5">LV-Positionen mit Tagesaufmaß</text>
+  <text x="1384" y="708" font-size="11" fill="#5F7369" font-family="ui-monospace, monospace" letter-spacing=".12em" text-anchor="end">HEUTE ERFASST</text>
+  <line x1="336" y1="724" x2="1384" y2="724" stroke="#ffffff" stroke-opacity=".07"/>
+  <g font-size="11" fill="#5F7369" font-family="ui-monospace, monospace" letter-spacing=".14em">
+    <text x="336" y="746">POS</text><text x="420" y="746">LEISTUNG</text><text x="820" y="746">EINHEIT</text>
+    <text x="960" y="746">MENGE</text><text x="1110" y="746">FOTO</text><text x="1240" y="746">STATUS</text>
+  </g>
+  <g font-size="12.5" fill="#B9C9C2">
+    <text x="336" y="776">01.10</text><text x="420" y="776">Kabelgraben offene Bauweise</text><text x="820" y="776">m</text><text x="960" y="776">—</text>
+    <circle cx="1120" cy="772" r="5" fill="#49D6C4"/><text x="1136" y="776" font-size="11.5" fill="#7E9189">4</text>
+    <rect x="1240" y="763" width="86" height="19" rx="9.5" fill="#49D6C4" fill-opacity=".14"/>
+    <text x="1283" y="776" font-size="10.5" fill="#8BEEE1" text-anchor="middle" letter-spacing=".08em">FREIGEGEBEN</text>
+
+    <text x="336" y="806">02.20</text><text x="420" y="806">Leerrohrbündel verlegen</text><text x="820" y="806">m</text><text x="960" y="806">—</text>
+    <circle cx="1120" cy="802" r="5" fill="#49D6C4"/><text x="1136" y="806" font-size="11.5" fill="#7E9189">7</text>
+    <rect x="1240" y="793" width="86" height="19" rx="9.5" fill="#C9A227" fill-opacity=".16"/>
+    <text x="1283" y="806" font-size="10.5" fill="#EFC85B" text-anchor="middle" letter-spacing=".08em">IN ARBEIT</text>
+  </g>
+
+  <rect x="0" y="0" width="1440" height="860" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+</g>
+</svg>
