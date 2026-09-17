@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://kernxbau.de/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://kernxbau.de/leistungen.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kernxbau.de/projekte.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kernxbau.de/ueber-uns.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kernxbau.de/kontakt.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kernxbau.de/kernx-live.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kernxbau.de/kernx-app.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kernxbau.de/kernx-3d.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kernxbau.de/impressum.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://kernxbau.de/datenschutz.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
+</urlset>
