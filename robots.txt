@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://kernxbau.de/sitemap.xml
