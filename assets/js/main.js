@@ -124,7 +124,7 @@
       gal.innerHTML = list.slice(0, shown).map(function (g, i) {
         return '<button type="button" data-i="' + i + '" aria-label="' + g.t + ' vergrößern">' +
           '<img src="assets/img/' + g.f + '-800.jpg" alt="' + g.t + '" loading="lazy" decoding="async">' +
-          '<span>' + (LABEL[g.c] || g.c) + '</span></button>';
+          '<span>' + (LABEL[g.c] || g.c) + ' · Symbolbild</span></button>';
       }).join('');
       var more = $('#galMore');
       if (more) more.hidden = shown >= list.length;

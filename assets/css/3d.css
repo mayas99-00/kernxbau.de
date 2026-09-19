@@ -311,3 +311,78 @@ footer{border-top:1px solid var(--ln);background:#03060C;padding:clamp(46px,6vw,
 .abg .mat li::before{content:"·";color:var(--st2);font-size:18px;line-height:1.1}
 .abg .no li::before{content:"×";color:#E0563F}
 @media(max-width:900px){.abg{grid-template-columns:1fr}}
+
+
+/* ═══ Bildkennzeichnung und Hinweise (Stand 19.09.2026) ═══ */
+/* .symbwrap braucht keinen eigenen position-Wert — alle Container haben bereits einen.
+   Die frühere Regel hat position:sticky und position:absolute überschrieben. */
+.symbtag{
+  position:absolute;left:0;right:0;bottom:0;z-index:6;
+  padding:7px 12px;
+  font:600 11px/1.45 var(--m);letter-spacing:.085em;text-transform:uppercase;
+  color:#FFFFFF;background:rgba(5,8,15,.86);
+  border-top:1px solid rgba(255,255,255,.16);
+  pointer-events:none;text-align:left;
+}
+@media(max-width:620px){.symbtag{font-size:9.5px;letter-spacing:.04em;padding:6px 9px}}
+.disc{
+  border:1px solid var(--ln2);border-left:3px solid var(--or);
+  background:var(--n2);border-radius:4px;
+  padding:clamp(17px,2.2vw,26px);margin:clamp(22px,3vw,34px) 0 0;
+}
+.disc b{display:block;font:700 15px/1.4 var(--d);margin-bottom:8px;color:var(--or2)}
+.disc p{margin:0;font-size:15px;line-height:1.66;color:var(--mu)}
+.disc p+p{margin-top:10px}
+.disc p b{display:inline;font-family:var(--b);font-size:inherit;color:var(--fg);margin:0}
+.ziel{
+  align-self:flex-start;display:inline-flex;font:600 10.5px/1 var(--m);
+  letter-spacing:.11em;text-transform:uppercase;color:var(--or2);
+  border:1px solid var(--or3);background:var(--or3);padding:6px 10px;border-radius:999px;
+}
+
+
+/* ═══ Nachtrag 19.09.2026 — Claim und Videohelligkeit ═══ */
+/* Hero-Video bleibt unverändert wie im Original. */
+.claim--3d{
+  position:absolute;left:0;right:0;top:clamp(86px,11vh,132px);z-index:4;
+  padding:0 clamp(18px,4vw,64px);
+  display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;pointer-events:none;
+}
+.claim--3d .claim__l{
+  margin:0;max-width:24ch;
+  font:700 clamp(20px,2.9vw,38px)/1.26 var(--d);letter-spacing:-.02em;
+  background:linear-gradient(103deg,#FFF 0%,var(--or2) 44%,var(--or) 74%,#FFF 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 2px 24px rgba(0,0,0,.6);
+}
+.claim--3d .claim__b{display:inline-block;margin:0 .32em;-webkit-text-fill-color:initial;color:initial;
+  filter:drop-shadow(0 0 14px rgba(255,176,113,.75))}
+.claim--3d .claim__s{font:500 10px/1 var(--m);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--mu);text-shadow:0 1px 10px rgba(0,0,0,.7)}
+@media(max-width:760px){.claim--3d{top:84px}.claim--3d .claim__l{font-size:18px}}
+
+
+/* ═══ Leitsatz-Band unter dem Hero ═══ */
+.cband{padding:clamp(44px,6.5vw,80px) 0 clamp(32px,5vw,56px);background:var(--n0);position:relative;overflow:hidden;z-index:2}
+.cband::before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);
+  width:min(700px,90%);height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent);opacity:.5}
+.cband .wrap{display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center}
+.cband__l{margin:0;max-width:26ch;font:700 clamp(23px,3.6vw,46px)/1.2 var(--d);letter-spacing:-.025em;
+  background:linear-gradient(104deg,#FFF 0%,var(--or2) 42%,var(--or) 72%,#FFF 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.cband__b{display:inline-block;margin:0 .3em;-webkit-text-fill-color:initial;color:initial;
+  filter:drop-shadow(0 0 18px rgba(255,176,113,.8))}
+.cband__s{font:500 10px/1 var(--m);letter-spacing:.2em;text-transform:uppercase;color:var(--mu2)}
+@media(max-width:700px){.cband__l{font-size:21px}}
+
+
+/* ═══ Eigene Aufnahmen: Hochformat-Video und Anlagenfoto ═══ */
+.stage--hoch{aspect-ratio:3/4;background:#000}
+.stage--hoch video{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+@media(max-width:1000px){.stage--hoch{aspect-ratio:4/3;max-height:74vh}}
+
+.anlage{
+  max-width:720px;margin:0 auto clamp(24px,3vw,36px);
+  border:1px solid var(--ln);border-radius:6px;overflow:hidden;background:#0A0F1A;
+}
+.anlage img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:contain}

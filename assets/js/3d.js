@@ -152,7 +152,7 @@
       gal.innerHTML = list.slice(0, shown).map(function (g, i) {
         return '<button type="button" data-i="' + i + '" aria-label="' + g.t + ' vergrößern">' +
           '<img src="assets/img/' + g.f + '-800.jpg" alt="' + g.t + '" loading="lazy" decoding="async">' +
-          '<span>' + (L[g.c] || g.c) + '</span></button>';
+          '<span>' + (L[g.c] || g.c) + ' · Symbolbild</span></button>';
       }).join('');
       var m = $('#more'); if (m) m.hidden = shown >= list.length;
       var gc = $('#gc'); if (gc) gc.textContent = Math.min(shown, list.length) + ' / ' + list.length;
